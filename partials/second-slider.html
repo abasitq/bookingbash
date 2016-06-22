@@ -1,0 +1,253 @@
+<section id="movies" class="grey-bg">
+    <div class="container">
+        <div class="row">
+            <h3 class="section-heading"><i class="fa fa-video-camera"></i> Movies <div class="pull-right view-all"><a href="#">View All <i class="fa fa-angle-double-right"></i></a></div></h3>
+            <div class="movies-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#latest" aria-controls="latest" role="tab" data-toggle="tab">Latest</a></li>
+                    <li role="presentation"><a href="#coming_soon" aria-controls="coming_soon" role="tab" data-toggle="tab">Coming Soon</a></li>
+                    <li role="presentation"><a href="#top_rated" aria-controls="top_rated" role="tab" data-toggle="tab">Top Rated</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="latest">
+                        <div id="latest-movie" class="carousel slide latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let latestmovie of latestmovies | mapToIterable">
+                                    <div *ngIf="latestmovie.key < 5">
+                                      <img src="{{resizer}}{{latestmovie.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{latestmovie.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{latestmovie.value.title}}
+                                          </div>
+                                          <div class="movie-desc-genre">
+                                              {{latestmovie.value.custom_fields.genre}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              <strong>Cast</strong> {{latestmovie.value.custom_fields.cast}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{latestmovie.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="item">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let latestmovie of latestmovies | mapToIterable">
+                                    <div *ngIf="latestmovie.key == 5 || latestmovie.key == 6 || latestmovie.key == 7 || latestmovie.key == 8 || latestmovie.key == 9">
+                                      <img src="{{resizer}}{{latestmovie.value.thumbnail_images.full.url}}&width=230&height=305}}">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{latestmovie.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{latestmovie.value.title}}
+                                          </div>
+                                          <div class="movie-desc-genre">
+                                              {{latestmovie.value.custom_fields.genre}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              <strong>Cast</strong> {{latestmovie.value.custom_fields.cast}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{latestmovie.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <a class="left carousel-control latest-left-icon" href="#latest-movie" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#latest-movie" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="coming_soon">
+                        <div id="comming-soon" class="carousel slide latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                <div class="latest-movies-slide hover-effect" *ngFor="let commingmovie of commingmovies | mapToIterable">
+                                  <div *ngIf="commingmovie.key < 5">
+                                    <img src="{{resizer}}{{commingmovie.value.thumbnail_images.full.url}}&width=230&height=305}}">
+                                    <div class="movie-description">
+                                        <div class="movie-desc-icons">
+                                            <i class="fa fa-info-circle"></i>
+                                            <i class="fa fa-clock-o"></i>
+                                            <i class="fa fa-share-alt"></i>
+                                            <i class="fa fa-image"></i>
+                                        </div>
+                                        <div class="movie-desc-rating">
+                                            <span><i class="fa fa-star"></i> {{commingmovie.value.custom_fields.rating}}</span>
+                                        </div>
+                                        <div class="movie-desc-name text-uppercase">
+                                            {{commingmovie.value.title}}
+                                        </div>
+                                        <div class="movie-desc-genre">
+                                            {{commingmovie.value.custom_fields.genre}}
+                                        </div>
+                                        <div class="movie-desc-cast">
+                                            <strong>Cast</strong> {{commingmovie.value.custom_fields.cast}}
+                                        </div>
+                                        <div class="movie-desc-plot">
+                                            {{commingmovie.value.excerpt}}
+                                        </div>
+                                        <div class="movie-desc-view">
+                                            <button class="btn btn-primary">View</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <div class="latest-movies-slide hover-effect" *ngFor="let commingmovie of commingmovies | mapToIterable">
+                                  <div *ngIf="commingmovie.key == 5 || commingmovie.key == 6 || commingmovie.key == 7 || commingmovie.key == 8 || commingmovie.key == 9">
+                                    <img src="{{resizer}}{{commingmovie.value.thumbnail_images.full.url}}&width=230&height=305}}">
+                                    <div class="movie-description">
+                                        <div class="movie-desc-icons">
+                                            <i class="fa fa-info-circle"></i>
+                                            <i class="fa fa-clock-o"></i>
+                                            <i class="fa fa-share-alt"></i>
+                                            <i class="fa fa-image"></i>
+                                        </div>
+                                        <div class="movie-desc-rating">
+                                            <span><i class="fa fa-star"></i> {{commingmovie.value.custom_fields.rating}}</span>
+                                        </div>
+                                        <div class="movie-desc-name text-uppercase">
+                                            {{commingmovie.value.title}}
+                                        </div>
+                                        <div class="movie-desc-genre">
+                                            {{commingmovie.value.custom_fields.genre}}
+                                        </div>
+                                        <div class="movie-desc-cast">
+                                            <strong>Cast</strong> {{commingmovie.value.custom_fields.cast}}
+                                        </div>
+                                        <div class="movie-desc-plot">
+                                            {{commingmovie.value.excerpt}}
+                                        </div>
+                                        <div class="movie-desc-view">
+                                            <button class="btn btn-primary">View</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#comming-soon" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#comming-soon" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="top_rated">
+                        <div id="top-rated" class="carousel slide latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                <div class="latest-movies-slide hover-effect" *ngFor="let topmovie of topmovies | mapToIterable">
+                                  <div *ngIf="topmovie.key < 5">
+                                    <img src="{{resizer}}{{topmovie.value.thumbnail_images.full.url}}&width=230&height=305}}">
+                                    <div class="movie-description">
+                                        <div class="movie-desc-icons">
+                                            <i class="fa fa-info-circle"></i>
+                                            <i class="fa fa-clock-o"></i>
+                                            <i class="fa fa-share-alt"></i>
+                                            <i class="fa fa-image"></i>
+                                        </div>
+                                        <div class="movie-desc-rating">
+                                            <span><i class="fa fa-star"></i> {{topmovie.value.custom_fields.rating}}</span>
+                                        </div>
+                                        <div class="movie-desc-name text-uppercase">
+                                            {{topmovie.value.title}}
+                                        </div>
+                                        <div class="movie-desc-genre">
+                                            {{topmovie.value.custom_fields.genre}}
+                                        </div>
+                                        <div class="movie-desc-cast">
+                                            <strong>Cast</strong> {{topmovie.value.custom_fields.cast}}
+                                        </div>
+                                        <div class="movie-desc-plot">
+                                            {{topmovie.value.excerpt}}
+                                        </div>
+                                        <div class="movie-desc-view">
+                                            <button class="btn btn-primary">View</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <div class="latest-movies-slide hover-effect" *ngFor="let topmovie of topmovies | mapToIterable">
+                                  <div *ngIf="topmovie.key == 5 || topmovie.key == 6 || topmovie.key == 7 || topmovie.key == 8 || topmovie.key == 9">
+                                    <img src="{{resizer}}{{topmovie.value.thumbnail_images.full.url}}&width=230&height=305}}">
+                                    <div class="movie-description">
+                                        <div class="movie-desc-icons">
+                                            <i class="fa fa-info-circle"></i>
+                                            <i class="fa fa-clock-o"></i>
+                                            <i class="fa fa-share-alt"></i>
+                                            <i class="fa fa-image"></i>
+                                        </div>
+                                        <div class="movie-desc-rating">
+                                            <span><i class="fa fa-star"></i> {{topmovie.value.custom_fields.rating}}</span>
+                                        </div>
+                                        <div class="movie-desc-name text-uppercase">
+                                            {{topmovie.value.title}}
+                                        </div>
+                                        <div class="movie-desc-genre">
+                                            {{topmovie.value.custom_fields.genre}}
+                                        </div>
+                                        <div class="movie-desc-cast">
+                                            <strong>Cast</strong> {{topmovie.value.custom_fields.cast}}
+                                        </div>
+                                        <div class="movie-desc-plot">
+                                            {{topmovie.value.excerpt}}
+                                        </div>
+                                        <div class="movie-desc-view">
+                                            <button class="btn btn-primary">View</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#top-rated" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#top-rated" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <button class="btn btn-default text-uppercase btn-custom">EXPLORE AND SCHEDULE MOVIES</button>
+            </div>
+        </div>
+    </div>
+</section>

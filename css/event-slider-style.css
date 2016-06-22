@@ -1,0 +1,17 @@
+/* Event slider image control */
+#events .owl-carousel .owl-item img{
+    width: 235px;
+    height: 300px;
+}
+#events .owl-carousel .owl-item:nth-child(6) img{
+    width: 685px;
+    height: 300px;
+}
+#events .owl-carousel .owl-item:nth-child(9) img{
+    width: 685px;
+    height: 300px;
+}
+#events .owl-carousel .owl-item:nth-child(12) img{
+    width: 685px;
+    height: 300px;
+}

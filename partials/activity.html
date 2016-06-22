@@ -1,0 +1,28 @@
+<section id="activities" class="grey-bg">
+    <div class="container">
+        <h3 class="section-heading"><i class="fa fa-video-camera"></i> Activities <div class="pull-right view-all"><a href="#">View All <i class="fa fa-angle-double-right"></i></a></div></h3>
+        <div class="col-sm-12 padding0 marbot30">
+            <div class="col-sm-6 martop30 activity pull-left" *ngFor="let activity of activities | mapToIterable">
+              <div *ngIf="activity.key < 4">
+                <img src="{{activity.value.thumbnail_images.full.url}}" class="img-responsive">
+                <div class="movie-description">
+                    <div class="movie-desc-icons">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                    <div class="text-uppercase">
+                        <h3>{{activity.value.title}}</h3>
+                    </div>
+                    <div class="movie-desc-view">
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-12 text-center padding0">
+            <button class="btn btn-default text-uppercase btn-custom">explore activities to do</button>
+        </div>
+    </div>
+</section>
