@@ -1,0 +1,27 @@
+  <img src="images/{{latestmovies.name}}.png">
+  <div class="movie-description">
+      <div class="movie-desc-icons">
+          <i class="fa fa-info-circle"></i>
+          <i class="fa fa-clock-o"></i>
+          <i class="fa fa-share-alt"></i>
+          <i class="fa fa-image"></i>
+      </div>
+      <div class="movie-desc-rating">
+          <span><i class="fa fa-star"></i> {{latestmovies.rating}}</span>
+      </div>
+      <div class="movie-desc-name text-uppercase">
+          {{latestmovies.name}}
+      </div>
+      <div class="movie-desc-genre">
+          {{latestmovies.type}}
+      </div>
+      <div class="movie-desc-cast">
+          <strong>Cast</strong> {{latestmovies.cast}}
+      </div>
+      <div class="movie-desc-plot">
+          <p>{{latestmovies.bio}}</p>
+      </div>
+      <div class="movie-desc-view">
+          <button class="btn btn-primary">View</button>
+      </div>
+  </div>

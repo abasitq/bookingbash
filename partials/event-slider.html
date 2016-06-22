@@ -1,0 +1,316 @@
+<section id="events">
+    <div class="container">
+        <div class="row">
+            <h3 class="section-heading"><i class="fa fa-calendar"></i> Events <div class="pull-right view-all"><a href="#">View All <i class="fa fa-angle-double-right"></i></a></div></h3>
+            <div class="movies-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#today" aria-controls="today" role="tab" data-toggle="tab">Today</a></li>
+                    <li role="presentation"><a href="#this_week" aria-controls="this_week" role="tab" data-toggle="tab">This Week</a></li>
+                    <li role="presentation"><a href="#this_month" aria-controls="this_month" role="tab" data-toggle="tab">This Month</a></li>
+                    <li role="presentation"><a href="#future_events" aria-controls="future_events" role="tab" data-toggle="tab">Future Events</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="today">
+                        <div id="today-event" class="carousel slide event latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="latest-movies-slide hover-effect" *ngFor="let todayevent of todayevents | mapToIterable">
+                                      <div *ngIf="todayevent.key < 6">
+                                            <img *ngIf="todayevent.key == 0 || todayevent.key == 3" src="{{resizer}}{{todayevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                            <img *ngIf="todayevent.key == 1 || todayevent.key == 2 || todayevent.key == 4 || todayevent.key == 5" src="{{resizer}}{{todayevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                        <div class="movie-description">
+                                            <div class="movie-desc-icons">
+                                                <i class="fa fa-info-circle"></i>
+                                                <i class="fa fa-clock-o"></i>
+                                                <i class="fa fa-share-alt"></i>
+                                                <i class="fa fa-image"></i>
+                                            </div>
+                                            <div class="movie-desc-rating">
+                                                <span><i class="fa fa-star"></i> {{todayevent.value.custom_fields.rating}}</span>
+                                            </div>
+                                            <div class="movie-desc-name text-uppercase">
+                                                {{todayevent.value.title}}
+                                            </div>
+                                            <div class="movie-desc-cast">
+                                                {{todayevent.value.custom_fields.artist}}
+                                            </div>
+                                            <div class="movie-desc-plot">
+                                                {{todayevent.value.excerpt}}
+                                            </div>
+                                            <div class="movie-desc-view">
+                                                <button class="btn btn-primary">View</button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="latest-movies-slide hover-effect" *ngFor="let todayevent of todayevents | mapToIterable">
+                                      <div *ngIf="todayevent.key == 6 || todayevent.key == 7 || todayevent.key == 8 || todayevent.key == 9 || todayevent.key == 10 || todayevent.key == 11">
+                                        <img *ngIf="todayevent.key == 6 || todayevent.key == 9" src="{{resizer}}{{todayevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="todayevent.key == 7 || todayevent.key == 8 || todayevent.key == 10 || todayevent.key == 11" src="{{resizer}}{{todayevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                        <div class="movie-description">
+                                            <div class="movie-desc-icons">
+                                                <i class="fa fa-info-circle"></i>
+                                                <i class="fa fa-clock-o"></i>
+                                                <i class="fa fa-share-alt"></i>
+                                                <i class="fa fa-image"></i>
+                                            </div>
+                                            <div class="movie-desc-rating">
+                                                <span><i class="fa fa-star"></i> {{todayevent.value.custom_fields.rating}}</span>
+                                            </div>
+                                            <div class="movie-desc-name text-uppercase">
+                                                {{todayevent.value.title}}
+                                            </div>
+                                            <div class="movie-desc-cast">
+                                                {{todayevent.value.custom_fields.artist}}
+                                            </div>
+                                            <div class="movie-desc-plot">
+                                                {{todayevent.value.excerpt}}
+                                            </div>
+                                            <div class="movie-desc-view">
+                                                <button class="btn btn-primary">View</button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#today-event" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#today-event" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="this_week">
+                        <div id="weekly-event" class="carousel event slide latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let weeklyevent of weeklyevents | mapToIterable">
+                                    <div *ngIf="weeklyevent.key < 6">
+                                      <img *ngIf="weeklyevent.key == 0 || weeklyevent.key == 3" src="{{resizer}}{{weeklyevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="weeklyevent.key == 1 || weeklyevent.key == 2 || weeklyevent.key == 4 || weeklyevent.key == 5" src="{{resizer}}{{weeklyevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{weeklyevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{weeklyevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{weeklyevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              <p>{{weeklyevent.value.excerpt}}</p>
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="item">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let weeklyevent of weeklyevents | mapToIterable">
+                                    <div *ngIf="weeklyevent.key == 6 || weeklyevent.key == 7 || weeklyevent.key == 8 || weeklyevent.key == 9 || weeklyevent.key == 10 || weeklyevent.key == 11">
+                                      <img *ngIf="weeklyevent.key == 6 || weeklyevent.key == 9" src="{{resizer}}{{weeklyevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="weeklyevent.key == 7 || weeklyevent.key == 8 || weeklyevent.key == 10 || weeklyevent.key == 11" src="{{resizer}}{{weeklyevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{weeklyevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{weeklyevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{weeklyevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{weeklyevent.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#weekly-event" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#weekly-event" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="this_month">
+                        <div id="monthly-event" class="carousel slide event latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let monthlyevent of monthlyevents | mapToIterable">
+                                    <div *ngIf="monthlyevent.key < 6">
+                                      <img *ngIf="monthlyevent.key == 0 || monthlyevent.key == 3" src="{{resizer}}{{monthlyevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="monthlyevent.key == 1 || monthlyevent.key == 2 || monthlyevent.key == 4 || monthlyevent.key == 5" src="{{resizer}}{{monthlyevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{monthlyevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{monthlyevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{monthlyevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{monthlyevent.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="item">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let monthlyevent of monthlyevents | mapToIterable">
+                                    <div *ngIf="monthlyevent.key == 6 || monthlyevent.key == 7 || monthlyevent.key == 8 || monthlyevent.key == 9 || monthlyevent.key == 10 || monthlyevent.key == 11">
+                                      <img *ngIf="monthlyevent.key == 6 || monthlyevent.key == 9" src="{{resizer}}{{monthlyevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="monthlyevent.key == 7 || monthlyevent.key == 8 || monthlyevent.key == 10 || monthlyevent.key == 11" src="{{resizer}}{{monthlyevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{monthlyevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{monthlyevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{monthlyevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{monthlyevent.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#monthly-event" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#monthly-event" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="future_events">
+                        <div id="future-event" class="carousel event slide latest-movie" data-ride="carousel">
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let futureevent of futureevents | mapToIterable">
+                                    <div *ngIf="futureevent.key < 6">
+                                      <img *ngIf="futureevent.key == 0 || futureevent.key == 3" src="{{resizer}}{{futureevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="futureevent.key == 1 || futureevent.key == 2 || futureevent.key == 4 || futureevent.key == 5" src="{{resizer}}{{futureevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{futureevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{futureevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{futureevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{futureevent.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="item">
+                                  <div class="latest-movies-slide hover-effect" *ngFor="let futureevent of futureevents | mapToIterable">
+                                    <div *ngIf="futureevent.key == 6 || futureevent.key == 7 || futureevent.key == 8 || futureevent.key == 9 || futureevent.key == 10 || futureevent.key == 11">
+                                      <img *ngIf="futureevent.key == 6 || futureevent.key == 9" src="{{resizer}}{{futureevent.value.thumbnail_images.full.url}}&width=685&height=305">
+                                        <img *ngIf="futureevent.key == 7 || futureevent.key == 8 || futureevent.key == 10 || futureevent.key == 11" src="{{resizer}}{{futureevent.value.thumbnail_images.full.url}}&width=230&height=305">
+                                      <div class="movie-description">
+                                          <div class="movie-desc-icons">
+                                              <i class="fa fa-info-circle"></i>
+                                              <i class="fa fa-clock-o"></i>
+                                              <i class="fa fa-share-alt"></i>
+                                              <i class="fa fa-image"></i>
+                                          </div>
+                                          <div class="movie-desc-rating">
+                                              <span><i class="fa fa-star"></i> {{futureevent.value.custom_fields.rating}}</span>
+                                          </div>
+                                          <div class="movie-desc-name text-uppercase">
+                                              {{futureevent.value.title}}
+                                          </div>
+                                          <div class="movie-desc-cast">
+                                              {{futureevent.value.custom_fields.artist}}
+                                          </div>
+                                          <div class="movie-desc-plot">
+                                              {{futureevent.value.excerpt}}
+                                          </div>
+                                          <div class="movie-desc-view">
+                                              <button class="btn btn-primary">View</button>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <a class="left carousel-control latest-left-icon" href="#future-event" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                            </a>
+                            <a class="right carousel-control latest-right-icon" href="#future-event" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <button class="btn btn-default text-uppercase btn-custom">EXPLORE AND SCHEDULE MOVIES</button>
+            </div>
+        </div>
+    </div>
+</section>

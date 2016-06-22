@@ -1,0 +1,38 @@
+#slider {
+    padding: 0;
+}
+.movies-slide {
+    float: left;
+    position: relative;
+}
+.movies-slide:first-child {
+    width: 65%;
+    height: 515px;
+}
+.movies-slide:nth-child(2) {
+    width: 35%;
+    height: 257.5px;
+}
+.movies-slide:nth-child(3) {
+    width: 35%;
+    height: 257.5px;
+}
+#slider .carousel-control {
+    width: 30px;
+    opacity: 1;
+    background-image: none;
+    top: 50%;
+    bottom: auto;
+    z-index: 3;
+}
+#slider .carousel-control span {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+}
+#slider .carousel-control.right {
+    right: 30px;
+}

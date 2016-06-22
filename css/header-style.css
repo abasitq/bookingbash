@@ -1,0 +1,25 @@
+header {
+    height: 90px;
+    padding: 15px 20px;
+}
+.logo {
+    float: left;
+}
+.btn-primary {
+    background-color: #ed1c24;
+    border-color: #ed1c24;
+}
+.btn-primary:active:hover, .btn-primary:hover {
+    background-color: rgb(218, 11, 11);
+    border-color: rgb(218, 11, 11);
+}
+.login-btn img {
+    width: 30px;
+    display: inline-block;
+}
+.search-signin {
+    padding: 13px 0px;
+}
+.padrightzero {
+    padding-right: 0;
+}
